@@ -26,12 +26,6 @@ Then('url is at endpoint {string}', (text) => {
     cy.url().should('eq', Cypress.config().baseUrl + text)
 })
 
-Then('footer has selenium href', () => {
-    cy.fixture('common-test-data').then(function (data) {
-        base.footer().should('have.attr', 'href', data.selenium_href)
-    })
-})
-
 Then('error message box has expected color', () => {
     cy.fixture('common-test-data').then(function (data) {
         base.message().should('have.css', 'background-color', data.error_red)
@@ -69,5 +63,40 @@ Then('user does not navigate to secure page', () => {
 Then('logout message text is correct', () => {
     cy.fixture('common-test-data').then(function (data) {
         base.message().should('contain', data.logout_message);
+    })
+})
+
+Then('GitHub banner has correct src', () => {
+    cy.fixture('common-test-data').then(function (data) {
+        base.gitHubBanner().should('have.attr', 'src', data.github_src);
+    })
+})
+
+Then('GitHub banner has correct href', () => {
+    cy.fixture('common-test-data').then(function (data) {
+        cy.log('**Note: I would double check that the gibhub redirect link is functioning as expected')
+        base.gitHubBannerLink().should('have.attr', 'href', data.github_href);
+    })
+})
+
+When('user clicks on GitHub banner', () => {
+    base.gitHubBannerLink().click({ force: true })
+})
+
+Then('url is GitHub href', () => {
+    cy.fixture('common-test-data').then(function (data) {
+        cy.url().should('eq', data.github_href)
+    })
+})
+
+Then('footer has selenium href', () => {
+    cy.fixture('common-test-data').then(function (data) {
+        base.footerLink().should('have.attr', 'href', data.selenium_href)
+    })
+})
+
+Then('footer has expected selenium message', () => {
+    cy.fixture('common-test-data').then(function (data) {
+        base.footer().should('have.text', data.footer_message)
     })
 })

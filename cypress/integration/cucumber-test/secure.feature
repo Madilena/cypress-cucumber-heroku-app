@@ -1,11 +1,11 @@
 Feature: secure
 
-    Scenario: test-id-12 : Secure message is as expected
+    Scenario: test-id-13 : Secure message is as expected
         Given base user logs in to heroku app
         Then url is at secure page
         Then secure message has correct text
     
-    Scenario: test-id-13 : Secure page aesthetics
+    Scenario: test-id-14 : Secure page aesthetics
         Given base user logs in via api
         Given user navigates to url endpoint "/secure"
         Then secure header has correct text
@@ -13,7 +13,7 @@ Feature: secure
         Then the header has expected font size
         Then secure instructions has correct text
 
-    Scenario: test-id-14 : Logout
+    Scenario: test-id-15 : Logout
         Given base user logs in via api
         Given user navigates to url endpoint "/secure"
         And user clicks login-logout button

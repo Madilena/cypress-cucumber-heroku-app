@@ -3,7 +3,8 @@
 ## Description
 * This project tests the Heroku Login Page.  It uses behavior driven development testing with cucumber.  
 * This regression suite is built on the assumption that the state of the heroku login page on 5/15/21 has all expected behavior.  
-* I added a few test cases for the secure page to test logout and to demo how current infrastructure can support additional pages and their assertions.      
+* I added a few test cases for the secure page to test logout and to demo how current infrastructure can support additional pages and their assertions.
+* Note, in test-id-12, the GitHub link's href is different from the url that the GitHub link redirects too.  I'm not sure if that is expected behavior, so I would confirm
 
 ## Test Organization
 *  Test cases can be found in the feature files at 'cypress/integration/cucumber-test'

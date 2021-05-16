@@ -77,7 +77,6 @@ Feature: login
         Then login instruction credentials are italic
         Then non-credential login instructions are normal font
         Then the instruction message has expected font weight
-        Then footer has selenium href
 
     @login @aesthetics
     Scenario: test-id-9 : Header assertions
@@ -100,3 +99,14 @@ Feature: login
         Then login error message is visible
         Then login error message has expected text for not logging in
         Then error message box has expected color
+
+    @login @aesthetics @thirdparty
+    Scenario: test-id-12 : Third party info on login page
+        Given user navigates to the login page
+        Then footer has selenium href
+        Then footer has expected selenium message
+        Then GitHub banner has correct src
+        Then GitHub banner has correct href
+        When user clicks on GitHub banner
+        #note: I would double check that the gibhub redirect link is functioning as expected
+        #Then url is GitHub href

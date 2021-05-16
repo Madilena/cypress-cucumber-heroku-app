@@ -6,7 +6,7 @@
   "scripts": {
     "test": "cypress open",
     "reports": "node cypress/support/cucumber-html-reporter.js",
-    "delete:reportFolder": "rm -rf cypress/cucumber-json/** && rm -rf cypress/reports/html_simple/**",
+    "delete:reportFolder": "rm -rf cypress/cucumber-json/* && rm -rf cypress/reports/html_simple/*",
     "test:cli": "npm run delete:reportFolder && cypress run",
     "test:cli:reports": "npm run delete:reportFolder && npm run test:cli && npm run reports",
     "test:reports": "npm run delete:reportFolder && npm run test && npm run reports"

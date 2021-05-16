@@ -17,11 +17,23 @@ class basePage {
     }
 
     footer() {
-        return cy.get('#page-footer > div > div > a')
+        return cy.get('#page-footer > div > div')
+    }
+
+    footerLink() {
+        return this.footer().find('a')
     }
 
     userInstructions() {
         return cy.get('#content > div > h4')
+    }
+
+    gitHubBanner() {
+        return cy.get('a > img')
+    }
+
+    gitHubBannerLink() {
+        return this.gitHubBanner().parent()
     }
 }
 export default basePage
