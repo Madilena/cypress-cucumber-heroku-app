@@ -11,7 +11,9 @@ This project tests the Heroku Login Page.  It uses behavior driven development t
 3. In order to run the tests you will need to set the username and password as environment variables, CYPRESS_USERNAME and CYPRESS_PASSWORD.
     * the username and password are in the user instructions at the heroku website, http://the-internet.herokuapp.com/login
 4. If you set the username and password as your OS environment varaibles, Run `npm test` to execute the tests in Test Runner | Run `npx cypress run` to execute the tests in CLI
-5. If you do not set the username and password as OS environment variables, Run `CYPRESS_USERNAME={username} CYPRESS_PASSWORD={password} npm test` | `CYPRESS_USERNAME={username} CYPRESS_PASSWORD={password} npx cypress run` to execute tests in CLI
+5. If you do not set the username and password as OS environment variables, Run `CYPRESS_USERNAME={username} CYPRESS_PASSWORD={password} npm test` | `CYPRESS_USERNAME={username} CYPRESS_PASSWORD={password} npm run test:cli` to execute tests in CLI
 5. If you want to run a specific test case, I'd recommend tagging the scenario in the feature file. Then you should specify that tag in the cypress.json's env.TAGs value.
-6. To create HTML reports execute first `npm run test:cli` and then `npm run create:html:report`
+6. To create HTML reports 
+    * Executing through cli : `npm run test:cli:reports`
+    * Executing through cypress tool : first execute `npm run test:reports` and then end the cypress session
 

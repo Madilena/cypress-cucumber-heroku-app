@@ -1,28 +1,32 @@
 {
-  "name": "cypress-demo-heroku-app",
+  "name": "cypress-cucumber-heroku-app",
   "version": "1.0.0",
   "description": "Cypress Demo for Heroku App.  Madilena Mendiola QA Challenge",
   "main": "index.js",
   "scripts": {
     "test": "cypress open",
-    "delete:reportFolder": "rm -rf mochawesome-report/",
+    "reports": "node cypress/support/cucumber-html-reporter.js",
+    "delete:reportFolder": "rm -rf cypress/cucumber-json/** && rm -rf cypress/reports/html_simple/**",
     "test:cli": "npm run delete:reportFolder && cypress run",
-    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
-    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json"
+    "test:cli:reports": "npm run delete:reportFolder && npm run test:cli && npm run reports",
+    "test:reports": "npm run delete:reportFolder && npm run test && npm run reports"
   },
   "author": "Madilena Mendiola",
   "devDependencies": {
+    "cucumber-html-reporter": "^5.4.0",
     "cypress": "^7.2.0",
     "cypress-cucumber-preprocessor": "^4.1.0",
     "cypress-downloadfile": "^1.2.0",
     "cypress-file-upload": "^5.0.6",
-    "cypress-select-tests": "^1.7.0",
-    "mocha": "^8.3.2",
-    "mochawesome": "^6.2.2",
-    "mochawesome-merge": "^4.2.0",
-    "mochawesome-report-generator": "^5.2.0"
+    "cypress-select-tests": "^1.7.0"
   },
   "cypress-cucumber-preprocessor": {
-    "nonGlobalStepDefinitions": true
+    "nonGlobalStepDefinitions": true,
+    "cucumberJson": {
+      "generate": true,
+      "outputFolder": "cypress/cucumber-json",
+      "filePrefix": "",
+      "fileSuffix": ".cucumber"
+    }
   }
 }
