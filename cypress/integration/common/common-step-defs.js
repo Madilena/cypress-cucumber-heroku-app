@@ -100,3 +100,12 @@ Then('footer has expected selenium message', () => {
         base.footer().should('have.text', data.footer_message)
     })
 })
+
+When('user clicks to close the message', () => {
+    base.closeMessage().click({ force: true })
+})
+
+Then('the message does not display', () => {
+    base.message().should('be.visible')
+})
+

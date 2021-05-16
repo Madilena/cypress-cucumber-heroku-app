@@ -6,7 +6,8 @@ Feature: login
         When user submits base username
         When user submits base password
         When user clicks login-logout button
-        Then url is at secure page
+        When user clicks to close the message
+        Then the message does not display
 
     @login
     Scenario: test-id-2 : Do not permit login for no username and good password
@@ -17,6 +18,8 @@ Feature: login
         Then login error message is visible
         Then login error message displays for incorrect username
         Then error message box has expected color
+        When user clicks to close the message
+        Then the message does not display
 
     @login
     Scenario: test-id-3 : Do not permit login for good username and no password

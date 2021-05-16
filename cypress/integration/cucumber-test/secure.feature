@@ -4,6 +4,8 @@ Feature: secure
         Given base user logs in to heroku app
         Then url is at secure page
         Then secure message has correct text
+        When user clicks to close the message
+        Then the message does not display
     
     Scenario: test-id-14 : Secure page aesthetics
         Given base user logs in via api

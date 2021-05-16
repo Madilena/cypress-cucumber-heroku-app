@@ -12,6 +12,10 @@ class basePage {
         return cy.get('#flash')
     }
 
+    closeMessage() {
+        return this.message().find('.close')
+    }
+
     header() {
         return cy.get('#content > div > h2')
     }
