@@ -1,0 +1,14 @@
+{
+    "login_header_text": "Login Page",
+    "invalid_username_error_message": "Your username is invalid!",
+    "invalid_password_error_message": "Your password is invalid!",
+    "login_error_message": "You must login to view the secure area!",
+    "login_instructions": {
+        "part0": "This is where you can log into the secure area. Enter ",
+        "part1": " for the username and ",
+        "part2": " for the password. If the information is wrong you should see error messages."
+    },
+    "button_blue": "rgb(43, 166, 203)",
+    "login_button_font": "FontAwesome",
+    "login_button_text_color": "rgb(255, 255, 255)"
+}

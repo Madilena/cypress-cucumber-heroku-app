@@ -1,0 +1,19 @@
+{
+  "watchForFileChanges": false,
+  "chromeWebSecurity": false,
+  "env": {
+    "TAGS": "not @ignore"
+},
+  "testFiles": [
+    "**/*.{feature,features}"
+  ],
+  "retries": 1,
+  "reporter": "../node_modules/mochawesome/src/mochawesome.js",
+  "reporterOptions": {
+    "overwrite": false,
+    "html": false,
+    "json": true
+  },
+  "baseUrl": "http://the-internet.herokuapp.com",
+  "experimentalStudio": true
+}

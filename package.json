@@ -1,0 +1,28 @@
+{
+  "name": "cypress-demo-heroku-app",
+  "version": "1.0.0",
+  "description": "Cypress Demo for Heroku App.  Madilena Mendiola QA Challenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open",
+    "delete:reportFolder": "rm -rf mochawesome-report/",
+    "test:cli": "npm run delete:reportFolder && cypress run",
+    "merge:reports": "mochawesome-merge mochawesome-report/*.json > cypress-combined-report.json",
+    "create:html:report": "npm run merge:reports && marge --reportDir TestReport cypress-combined-report.json"
+  },
+  "author": "Madilena Mendiola",
+  "devDependencies": {
+    "cypress": "^7.2.0",
+    "cypress-cucumber-preprocessor": "^4.1.0",
+    "cypress-downloadfile": "^1.2.0",
+    "cypress-file-upload": "^5.0.6",
+    "cypress-select-tests": "^1.7.0",
+    "mocha": "^8.3.2",
+    "mochawesome": "^6.2.2",
+    "mochawesome-merge": "^4.2.0",
+    "mochawesome-report-generator": "^5.2.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true
+  }
+}
