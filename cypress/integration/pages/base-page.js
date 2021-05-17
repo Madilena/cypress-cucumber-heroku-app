@@ -13,7 +13,7 @@ class basePage {
     }
 
     closeMessage() {
-        return this.message().find('.close')
+        return this.message().find('a')
     }
 
     header() {

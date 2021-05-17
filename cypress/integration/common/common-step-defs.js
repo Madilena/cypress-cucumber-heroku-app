@@ -106,6 +106,6 @@ When('user clicks to close the message', () => {
 })
 
 Then('the message does not display', () => {
-    base.message().should('be.visible')
+    base.message().should('not.exist')
 })
 
